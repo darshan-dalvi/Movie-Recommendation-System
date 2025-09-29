@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-card">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <span>MovieRec</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#recommendations" class="nav-link">Recommendations</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Discover Your Next
+                    <span class="gradient-text">Favorite Movie</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Get personalized movie recommendations powered by advanced AI algorithms
+                </p>
+                
+                <!-- Search Section -->
+                <div class="search-container glass-card">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input 
+                            type="text" 
+                            id="movieSearch" 
+                            class="search-input" 
+                            placeholder="Search for a movie..."
+                            autocomplete="off"
+                        >
+                        <button id="searchBtn" class="search-btn">
+                            <i class="fas fa-magic"></i>
+                            Get Recommendations
+                        </button>
+                    </div>
+                    
+                    <!-- Search Suggestions -->
+                    <div id="searchSuggestions" class="search-suggestions glass-card hidden"></div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats-container">
+                    <div class="stat-item glass-card">
+                        <div class="stat-number" id="totalMovies">-</div>
+                        <div class="stat-label">Movies Available</div>
+                    </div>
+                    <div class="stat-item glass-card">
+                        <div class="stat-number">AI</div>
+                        <div class="stat-label">Powered</div>
+                    </div>
+                    <div class="stat-item glass-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Possibilities</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="recommendations-section">
+            <div class="section-header">
+                <h2 class="section-title">Movie Recommendations</h2>
+                <p class="section-subtitle">Based on your selection</p>
+            </div>
+            
+            <!-- Loading Animation -->
+            <div id="loadingAnimation" class="loading-container hidden">
+                <div class="loading-spinner"></div>
+                <p>Finding perfect recommendations...</p>
+            </div>
+            
+            <!-- Recommendations Grid -->
+            <div id="recommendationsGrid" class="movies-grid hidden"></div>
+            
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results hidden">
+                <i class="fas fa-film"></i>
+                <h3>No recommendations yet</h3>
+                <p>Search for a movie above to get started!</p>
+            </div>
+        </section>
+
+        <!-- Featured Movies Section -->
+        <section class="featured-section">
+            <div class="section-header">
+                <h2 class="section-title">Popular Movies</h2>
+                <p class="section-subtitle">Trending and popular choices</p>
+            </div>
+            <div id="featuredMovies" class="movies-grid"></div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer glass-card">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-film"></i>
+                    <span>MovieRec</span>
+                </div>
+                <p>Discover your next favorite movie with AI-powered recommendations.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#recommendations">Recommendations</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MovieRec. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
